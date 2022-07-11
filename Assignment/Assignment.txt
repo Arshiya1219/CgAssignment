@@ -1,8 +1,8 @@
- #include <iostream>
-  2 #include <sys/types.h>
-  3 #include <unistd.h>
-  4 #include <sys/wait.h>
-  5
+ #include<iostream>
+  2 #include<sys/types.h>
+  3 #include<sys/wait.h>
+  4 #include<unistd.h>
+  5 using namespace std;
   6 int main()
   7 {
   8     pid_t pid;
@@ -11,10 +11,10 @@
  11     {
  12         pid = fork();
  13         if(pid < 0)
- 14             cout<<"MAX no of concurrent processes:"<<i<<endl;
- 15             cin>>i;
+ 14             cout<<"Max concurrent processes:"<<i<<endl;
+ 15     
  16         if(pid == 0)
- 17         i++;
+ 17             i++;
  18         else;
  19         {
  20             wait(0);
