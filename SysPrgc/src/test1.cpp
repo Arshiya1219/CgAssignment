@@ -1,15 +1,29 @@
-#include<iostream>
-#include<unistd.h>
-#include<sys/wait.h>
+#include <iostream>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
 using namespace std;
 
-int main(int argc,char*argv[])
+int main()
 {
-    cout<<"Enter the number of natural numbers"<<argc<<endl;
-    cout<<"Here is the list of natural numbers"<<endl;
-    for(int i=0;i<=argc;i++)
+  int i,N, status;
+    pid_t pid;
+    pid = fork();
+    if (pid == 0)
     {
-        cout<<argv[i]<<endl;
+        for(i=1;i<N;i++)
+	    if(i%2 == 0)
+		cout<<"even \n"<<i<<endl;
     }
-    return 0;
+    else
+    {
+	    if (pid > 0)
+		pid = waitpid(pid, &status, 0);
+		for(i=1;i<N;i++)
+		if(i%2 != 0)
+		cout<<"odd \n"<<i<<endl;
+	}
+	return 0;
 }
