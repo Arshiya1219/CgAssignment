@@ -24,7 +24,7 @@ int main()
 		    cout<<"Unable to open the file"<<endl;
 			exit(0);
 		}
-	for(int k=0;i<N;k++)
+	for(int k=0;k<N;k++)
 	{
 	    E[k].getEmpDetails();
 		f.write(reinterpret_cast<char*>(&E[k]),sizeof(Employee));
@@ -41,8 +41,17 @@ int main()
 		    cout<<"\nUnable to open the file"<<endl;
 			exit(0);
 		}
-		cout<<"Sizeof Employee:"<<sizeof(Employee)<<endl;
-		f.read(reinterpret_cast<<char*>(&Employee),sizeof(Employee));
+		cout<<"print Employee Details"<<endl;
+		for(int k=0;k<N;k++)
+		{
+		    E[k].display();
+		    f.read(reinterpret_cast<<char*>(&E[k]),sizeof(Employee));
+		    cout<<"\n
+	            f.close();
+		cout<<"Parent terminates"<<endl;
+	}
+	return 0;
+}
 
 
 	    
