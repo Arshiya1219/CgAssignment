@@ -31,6 +31,7 @@ int main()
 	}
 	f.close();
 	cout<<"Child terminates"<<endl;
+	}
 	else
 	{
 	    wait((int *)0);
